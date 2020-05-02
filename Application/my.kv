@@ -1,0 +1,3071 @@
+
+WindowManager:
+    HomeScreen:
+    Educate:
+    Educate_2:
+    Educate_3:
+    Educate_4:
+    Educate_5:
+    Educate_6:
+    Educate_7:
+    Educate_8:
+    Calculate:
+    Calculate_Personal:
+    Calculate_Personal_2:
+    CarbonFootprintPage:
+    TakeAction:
+    TakeAction_2:
+    TakeAction_3:
+    TakeAction_4:
+    TakeAction_5:
+    TakeAction_6
+    NearbyLocation:
+    NearbyResults:
+
+<HomeScreen>:
+
+    orientation: 'vertical'
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    name: "home"
+
+    GridLayout:
+        size: root.width, root.height
+        cols:1
+
+        GridLayout:
+            cols:1
+            Button:
+                id: generate_btn_1
+                on_release:
+                    app.root.current = "educate"
+                    root.manager.transition.direction = "left"
+                background_color: (255,255,255)
+                Image:
+                    allow_stretch: True
+                    keep_ratio: False
+                    size: generate_btn_1.width, generate_btn_1.height
+                    source: 'DESIGN_PCUP_1.png'
+                    pos: generate_btn_1.pos
+
+        GridLayout:
+            id: generate_btn_2
+            cols:1
+            Button:
+                on_release:
+                    app.root.current = "calculate"
+                    root.manager.transition.direction = "left"
+                background_color: (255,255,255)
+                Image:
+                    allow_stretch: True
+                    keep_ratio: False
+                    size: generate_btn_2.size
+                    source: 'DESIGN_PCUP_2.png'
+                    pos: generate_btn_2.pos
+        GridLayout:
+            id: generate_btn_3
+            cols:1
+            Button:
+                on_release:
+                    app.root.current = "take_action"
+                    root.manager.transition.direction = "left"
+                Image:
+                    allow_stretch: True
+                    keep_ratio: False
+                    size: generate_btn_3.size
+                    source: 'DESIGN_PCUP_3.png'
+                    pos: generate_btn_3.pos
+
+
+<Educate>:
+    info_1: info_1
+
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "educate"
+
+    NavigationDrawer:
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'Climate Change Guide'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'What is climate change?'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Greenhouse Effect'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_2'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Impacts of Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_3'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Coping with the impacts'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_4'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_5'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+        GridLayout:
+            cols:1
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                size_hint_y: 0.05
+
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+                Label:
+                    text: "Climate Change Guide"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.7
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'graph.png'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder'
+                        color: (0,0,0,1)
+
+<Educate_2>
+    info_1: info_1
+
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "educate_2"
+
+    NavigationDrawer:
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'Climate Change Guide'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is climate change?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate'
+                        root.manager.transition.direction = 'down'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Greenhouse Effect'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Impacts of Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_3'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Coping with the impacts'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_4'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_5'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            cols:1
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                size_hint_y: 0.05
+
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+                Label:
+                    text: "Climate Change Guide"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.7
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'greenhouse.png'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder'
+                        color: (0,0,0,1)
+
+<Educate_3>
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "educate_3"
+
+    NavigationDrawer:
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'Climate Change Guide'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is climate change?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate'
+                        root.manager.transition.direction = 'down'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Greenhouse Effect'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_2'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Impacts of Climate Change'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Coping with Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_4'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_5'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            cols:1
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                size_hint_y: 0.05
+
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+                Label:
+                    text: "Climate Change Guide"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.7
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'implications.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder'
+                        color: (0,0,0,1)
+
+<Educate_4>
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "educate_4"
+
+    NavigationDrawer:
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'Climate Change Guide'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is climate change?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate'
+                        root.manager.transition.direction = 'down'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Greenhouse Effect'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_2'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Impacts of Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_3'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Coping with Climate Change'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_5'
+                        root.manager.transition.direction = 'up'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            cols:1
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                size_hint_y: 0.05
+
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+                Label:
+                    text: "Climate Change Guide"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.7
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'farming.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder'
+                        color: (0,0,0,1)
+
+
+<Educate_5>
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "educate_5"
+
+    NavigationDrawer:
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'Climate Change Guide'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is climate change?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate'
+                        root.manager.transition.direction = 'down'
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Greenhouse Effect'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_2'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Impacts of Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_3'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Coping with Climate Change'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'educate_4'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+        GridLayout:
+            cols:1
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                size_hint_y: 0.05
+
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+                Label:
+                    text: "Climate Change Guide"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.7
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                ScrollView:
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder'
+                        color: (0,0,0,1)
+
+<Calculate>:
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            source:'Household_Section_Outline.png'
+            pos: self.pos
+            size: self.size
+    name: "calculate"
+
+    family_members: family_members
+    electricity_small: electricity_small
+    electricity_medium: electricity_medium
+    electricity_large: electricity_large
+    lpg: lpg
+    no_cars: no_cars
+    kmperl: kmperl
+    mileage: mileage
+
+    GridLayout:
+        cols:1
+        BoxLayout
+            size_hint_y: 0.05
+            Label:
+                text: "Household Section"
+                color: (0,0,0,1)
+                bold: True
+                size_hint_x: 0.6
+                canvas.before:
+                    Color:
+                        rgba: 128,0,0,0.6
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Home"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                background_color: (0,255,0,0.8)
+                text:"Next"
+		        color:(0,0,0,1)
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "calculate_personal"
+                    root.manager.transition.direction = "left"
+                    root.get_values()
+
+
+        BoxLayout:
+            size_hint_y:0.15833333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    text: "How many members stay in your household?"
+                    valign: 'middle'
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "int"
+                    id: family_members
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y: 0.15833333
+            BoxLayout:
+                size_hint_x: 0.5
+                Label:
+                    text: "Annual electricity usage:"
+                    valign: 'middle'
+                    text_size: self.width, self.height
+                    height: self.texture_size[1]
+
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Small House (3000kWh)"
+                    color: (0,0,0,1)
+                CheckBox:
+                    group: 'electricity'
+                    id: electricity_small
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Medium House (5000kWh)"
+                    color: (0,0,0,1)
+                CheckBox:
+                    group: 'electricity'
+                    id: electricity_medium
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Large House (8500kWh)"
+                    color: (0,0,0,1)
+                CheckBox:
+                    group: 'electricity'
+                    id: electricity_large
+                    size_hint_x: 0.5
+                    active: False
+
+        BoxLayout:
+            size_hint_y: 0.15833333
+            BoxLayout:
+                size_hint_x: 0.5
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How many LPG cylinders a month?"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "int"
+                    id: lpg
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y: 0.15833333
+            BoxLayout:
+                size_hint_x: 0.5
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How many cars do you have?"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "int"
+                    id: no_cars
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y: 0.15833333
+            BoxLayout:
+                size_hint_x: 0.5
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+                    text: "What is your cars km/litre\n(If you own more than 1, the average km/litre of all your cars)"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "float"
+                    id: kmperl
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y: 0.15833333
+            BoxLayout:
+                size_hint_x: 0.5
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "What is your car's annual mileage\n(If you own more than 1, enter total of all mileages added)"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "float"
+                    id: mileage
+                    multiline: False
+
+
+<Calculate_Personal>:
+    airplane: airplane
+    bus:bus
+    train:train
+
+    organic_none:organic_none
+    organic_some: organic_some
+    organic_most: organic_most
+    organic_all: organic_all
+
+    meatdiary_all: meatdiary_all
+    meatdiary_average: meatdiary_average
+    meatdiary_little: meatdiary_little
+    meatdiary_vegetarian: meatdiary_vegetarian
+    meatdiary_vegan: meatdiary_vegan
+
+    source_none: source_none
+    source_average: source_average
+    source_most: source_most
+    source_all: source_all
+
+    name: "calculate_personal"
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            source: 'Personal_Section_1_Outline.png'
+            pos: self.pos
+            size: self.size
+
+
+    GridLayout:
+        cols:1
+        BoxLayout
+            size_hint_y: 0.05
+            Label:
+                text: "Personal Section"
+                color: (0,0,0,1)
+                bold: True
+                size_hint_x: 0.6
+                canvas.before:
+                    Color:
+                        rgba: 128,0,0,0.6
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Home"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                background_color: (0,255,0,0.8)
+                text: "Next"
+		        color: (0,0,0,1)
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "calculate_personal_2"
+                    root.manager.transition.direction = "left"
+                    root.get_values()
+
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Annual Airplane mileage"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "float"
+                    id:airplane
+                    multiline: False
+
+
+
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much of your food intake is organic?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "None"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: organic_none
+                    group: 'food_organic'
+                    size_hint_x: 0.5
+                    active: False
+
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Some"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: organic_some
+                    group: 'food_organic'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Most"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: organic_most
+                    group: 'food_organic'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "All"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: organic_all
+                    group: 'food_organic'
+                    size_hint_x: 0.5
+                    active: False
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Annual Train mileage"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "float"
+                    id:train
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much meat&diary do you consume?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Its all I eat"
+                    color: (0,0,0,1)
+                CheckBox:
+                    group: 'food_meatdiary'
+                    id: meatdiary_all
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Average amount"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: meatdiary_average
+                    group: 'food_meatdiary'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Very little"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: meatdiary_little
+                    group: 'food_meatdiary'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Lacto-vegetarian"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: meatdiary_vegetarian
+                    group: 'food_meatdiary'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Vegan"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: meatdiary_vegan
+                    group: 'food_meatdiary'
+                    size_hint_x: 0.5
+                    active: False
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Annual Bus mileage"
+                    color: (0,0,0,1)
+            BoxLayout:
+                size_hint_x: 0.5
+                TextInput:
+                    input_filter: "float"
+                    id:bus
+                    multiline: False
+
+        BoxLayout:
+            size_hint_y:0.1583333
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much of your food is locally sourced?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Almost none"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: source_none
+                    group: 'food_source'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Average amount"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: source_average
+                    group: 'food_source'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Most"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: source_most
+                    group: 'food_source'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "All"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: source_all
+                    group: 'food_source'
+                    size_hint_x: 0.5
+                    active: False
+
+
+<Calculate_Personal_2>:
+    packaged_aboveaverage: packaged_aboveaverage
+    packaged_average: packaged_average
+    packaged_belowaverage: packaged_belowaverage
+    packaged_none: packaged_none
+
+    compost_none: compost_none
+    compost_some: compost_some
+    compost_all: compost_all
+
+    waste_morefifty: waste_morefifty
+    waste_lessfifty: waste_lessfifty
+    waste_lessthirty: waste_lessthirty
+    waste_lessten: waste_lessten
+
+    recycle_yes: recycle_yes
+    recycle_no: recycle_no
+
+    name: "calculate_personal_2"
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            source: 'Personal_Section_2_Outline.png'
+            pos: self.pos
+            size: self.size
+
+
+    GridLayout:
+        cols:1
+        BoxLayout
+            size_hint_y: 0.05
+            Label:
+                text: "Peronal Section II"
+                color: (0,0,0,1)
+                bold: True
+                size_hint_x: 0.6
+                canvas.before:
+                    Color:
+                        rgba: 128,0,0,0.6
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Home"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                background_color: (0,255,0,0.8)
+                text: "Calculate"
+                color: (0,0,0,1)
+                size_hint_x: 0.2
+                on_release:
+                    root.get_values()
+                    app.root.current = "footprint"
+
+
+        BoxLayout:
+            size_hint_y:0.19
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much packaged food do you consume?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Above average"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: packaged_aboveaverage
+                    group: 'food_packaged'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Average amount"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: packaged_average
+                    group: 'food_packaged'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Below average"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: packaged_belowaverage
+                    group: 'food_packaged'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "None"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: packaged_none
+                    group: 'food_packaged'
+                    size_hint_x: 0.5
+                    active: False
+
+        BoxLayout:
+            size_hint_y:0.19
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much of your food waste is composted?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "None"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: compost_none
+                    group: 'compost'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Some"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: compost_some
+                    group: 'compost'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "All"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: compost_all
+                    group: 'compost'
+                    size_hint_x: 0.5
+                    active: False
+
+        BoxLayout:
+            size_hint_y:0.19
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "How much of your food do you waste?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: ">50%"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: waste_morefifty
+                    group: 'food_waste'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "<50%"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: waste_lessfifty
+                    group: 'food_waste'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "<30%"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: waste_lessthirty
+                    group: 'food_waste'
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "<10%"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: waste_lessten
+                    group: 'food_waste'
+                    size_hint_x: 0.5
+                    active: False
+        BoxLayout:
+            size_hint_y:0.19
+            BoxLayout:
+                size_hint_x:0.5
+                cols:1
+                Label:
+                    valign: 'middle'
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Do you segregate and/or recycle?"
+                    color: (0,0,0,1)
+            GridLayout:
+                cols:1
+                size_hint_x:0.5
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "Yes"
+                    color: (0,0,0,1)
+                CheckBox:
+                    group: 'recycle'
+                    id: recycle_yes
+                    size_hint_x: 0.5
+                    active: False
+
+                Label:
+                    size_hint_x: 0.5
+                    size_hint_y: None
+                    text_size: self.width, None
+                    height: self.texture_size[1]
+
+                    text: "No"
+                    color: (0,0,0,1)
+                CheckBox:
+                    id: recycle_no
+                    group: 'recycle'
+                    size_hint_x: 0.5
+                    active: False
+
+<CarbonFootprintPage>
+    pass_footprint: pass_footprint
+    name: "footprint"
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            source: 'Carbon_Footprint_Canvas.png'
+            pos: self.pos
+            size: self.size
+
+    GridLayout:
+        cols:1
+        BoxLayout
+            size_hint_y: 0.05
+            Label:
+                text: "Carbon Footprint Results"
+                color: (0,0,0,1)
+                bold: True
+                size_hint_x: 0.6
+                canvas.before:
+                    Color:
+                        rgba: 128,0,0,0.6
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Home"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Share"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+
+        GridLayout:
+            size_hint_y: 0.95
+            cols: 1
+            Label:
+                id: pass_footprint
+                text: "calculation failed"
+                color: (0,0,0,1)
+                bold: True
+
+<TakeAction>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_2'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_3'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+                    on_release:
+                        app.root.current = 'take_action_4'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Biogas Production'
+                    on_release:
+                        app.root.current = 'take_action_5'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_6'
+                        root.manager.transition.direction = 'up'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'landfill.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+<TakeAction_2>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action_2"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color:(0, 255, 255, 1)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_3'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+                    on_release:
+                        app.root.current = 'take_action_4'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Biogas Production'
+                    on_release:
+                        app.root.current = 'take_action_5'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_6'
+                        root.manager.transition.direction = 'up'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'inorganic.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+
+<TakeAction_3>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action_3"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color:(128, 0, 0, 0.6)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_2'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+                    on_release:
+                        app.root.current = 'take_action_4'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Biogas Production'
+                    on_release:
+                        app.root.current = 'take_action_5'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_6'
+                        root.manager.transition.direction = 'up'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'recycle.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+<TakeAction_4>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action_4"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color:(128, 0, 0, 0.6)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_2'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_3'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Biogas Production'
+                    on_release:
+                        app.root.current = 'take_action_5'
+                        root.manager.transition.direction = 'up'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_6'
+                        root.manager.transition.direction = 'up'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'composting.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+<TakeAction_5>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action_5"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color:(128, 0, 0, 0.6)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_2'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_3'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+                    on_release:
+                        app.root.current = 'take_action_4'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Biogas Production'
+                    color: (0,0,0,1)
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_6'
+                        root.manager.transition.direction = 'up'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                GridLayout:
+                    id: graph
+                    cols:1
+                    size_hint_y: 0.4
+                    Image:
+                        allow_stretch: True
+                        keep_ratio: True
+                        size: graph.size
+                        source: 'biogas.jpg'
+                        pos: graph.pos
+
+                ScrollView:
+                    size_hint_y: 0.6
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+<TakeAction_6>:
+    info_1: info_1
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgb: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    name: "take_action_6"
+    NavigationDrawer
+        id: main_win
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            GridLayout:
+                cols:1
+                Label:
+                    text: 'A guide to waste management'
+                    color: 0,0,0,1
+                    size_hint_y: 0.2
+                    size_hint_x:1
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'What is waste management?'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color:(128, 0, 0, 0.6)
+                    text: 'Types of waste'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_2'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Recycling'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_3'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    color: (0,0,0,1)
+                    text: 'Composting'
+                    on_release:
+                        app.root.current = 'take_action_4'
+                        root.manager.transition.direction = 'down'
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (128, 0, 0, 0.6)
+                    text: 'Biogas Production'
+                    color: (0,0,0,1)
+                    on_release:
+                        app.root.current = 'take_action_5'
+                        root.manager.transition.direction = 'down'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (0, 255, 255, 1)
+                    text: 'Works Cited'
+                    color: (0,0,0,1)
+
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+                Button:
+                    size_hint_y: 0.1
+                    size_hint_x:1
+                    background_color: (255,255,255,1)
+                    text: 'no'
+
+
+        GridLayout:
+            canvas:
+                Color:
+                    rgba: (1,1,1,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            cols:1
+            BoxLayout
+                size_hint_y: 0.05
+                Button:
+                    background_color: (0,255,0,0.8)
+                    size_hint_x:0.1
+                    text: "+"
+                    color: (0,0,0,1)
+                    on_release: main_win.toggle_state()
+
+                Label:
+                    text: "Take Action"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.9)
+                    text: "Nearby locations"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.3
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "left"
+
+            GridLayout:
+                size_hint_y:0.95
+                cols:1
+                ScrollView:
+                    Label:
+                        id: info_1
+                        size_hint_y: None
+                        text_size: self.width, None
+                        height: self.texture_size[1]
+                        text: 'placeholder_2'
+                        color: (0,0,0,1)
+
+
+
+<NearbyLocation>
+    name: "nearby_locations"
+    orientation: 'vertical'
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    query: nearby_search
+
+    GridLayout:
+        cols:1
+        BoxLayout:
+            size_hint_y: 0.1
+            Button:
+                background_color: (1,0,1,1)
+                text: "Return"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "take_action"
+                    root.manager.transition.direction = "right"
+            Label:
+                text: "Nearby Locations"
+                color: (0,0,0,1)
+                bold: True
+                size_hint_x: 0.4
+                canvas.before:
+                    Color:
+                        rgba: 128,0,0,0.6
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Button:
+                background_color: (1,0,1,1)
+                text: "Home"
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "home"
+                    root.manager.transition.direction = "right"
+
+            Button:
+                background_color: (0,255,0,0.8)
+                text: "Search"
+                color: (0,0,0,1)
+                size_hint_x: 0.2
+                on_release:
+                    app.root.current = "NearbyResults"
+                    root.manager.transition.direction = "right"
+                    root.get_locations()
+        BoxLayout:
+            size_hint_x: 0.3
+        BoxLayout:
+            size_hint_y: 0.2
+            Label:
+                size_hint_x: 0.3
+                text_size: self.width, None
+                text: "Where would you like to search for waste management organizations?"
+                color: (0,0,0,1)
+                valign: 'middle'
+                halign: 'center'
+            TextInput:
+                multiline: False
+                id: nearby_search
+                size_hint_x: 0.5
+            Button:
+                size_hint_x: 0.2
+                background_color: (0,255,0,0.8)
+                text: "Search"
+                color: (0,0,0,1)
+                size_hint_x: 0.2
+                on_release:
+                    #thing.background_color: (255,255,0,0.8)
+                    #text: "Loading..."
+                    app.root.current = "NearbyResults"
+                    root.manager.transition.direction = "right"
+                    root.get_locations()
+        BoxLayout:
+            size_hint_x: 0.3
+
+<NearbyResults>
+    result_1: result_1
+    result_2: result_2
+    result_3: result_3
+    result_4: result_4
+    result_5: result_5
+    result_6: result_6
+    result_7: result_7
+    result_8: result_8
+    result_9: result_9
+    result_10: result_10
+    result_11: result_11
+    result_12: result_12
+    result_13: result_13
+    result_14: result_14
+
+    name: 'NearbyResults'
+    orientation: 'vertical'
+    spacing: 10
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    GridLayout:
+        cols:1
+        GridLayout:
+            size_hint_y: 0.05
+            cols:1
+            BoxLayout:
+                size_hint_y: 0.1
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Return"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "take_action"
+                        root.manager.transition.direction = "right"
+
+                Label:
+                    text: "Results"
+                    color: (0,0,0,1)
+                    bold: True
+                    size_hint_x: 0.4
+                    canvas.before:
+                        Color:
+                            rgba: 128,0,0,0.6
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                Button:
+                    background_color: (1,0,1,1)
+                    text: "Home"
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "home"
+                        root.manager.transition.direction = "right"
+
+                Button:
+                    background_color: (255,255,0,0.8)
+                    text: "Search"
+                    color: (0,0,0,1)
+                    size_hint_x: 0.2
+                    on_release:
+                        app.root.current = "nearby_locations"
+                        root.manager.transition.direction = "right"
+
+        GridLayout:
+            cols:1
+            size_hint_y: 0.95
+
+            Label:
+                id: result_1
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_2
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_3
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_4
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_5
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_6
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_7
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_8
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_9
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_10
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_11
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_12
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_13
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'
+
+            Label:
+                id: result_14
+                text:''
+                color: (0,0,0,1)
+                size_hint_x: 1
+                size_hint_y: 0.07307692
+                text_size: self.width, None
+                halign: 'left'

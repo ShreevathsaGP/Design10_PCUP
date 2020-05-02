@@ -1,0 +1,26 @@
+What are the causes of climate change?
+As we deduced in the previous section, the primary catalyst for the rapid changes in the climate is the global warming phenomenon, but the greenhouse effect in specific can be attributed as the primary cause of global warming, hence the primary cause of climate change too.
+
+It is Earth's natural function to keep some of the heat that is radiated from the earth. This phenomenon is called the Greenhouse Effect.
+
+These are the main steps, in the greenhouse effect (can be visually interpreted from the diagram above):
+--> The atmosphere of our earth allows in the short-wave solar radiation from the sun to heat the Earth's surface.
+--> This radiation heats up the surface of our Earth and most of it is reflected back towards outer space as, long-wave, infrared radiation.
+--> This long-wave heat is captured the greenhouse gasses in our atmosphere (example: methane, nitrous-oxide, carbon-dioxide). However the key point is that, only a small fraction of the heat is captured due to the negligible amount of greenhouse gasses.
+--> This is the process wherein the Earth is heated.
+
+Now the problem occurs, when there is an excess of greenhouses gasses in the atmosphere due to usage of fossil fuels, deforestation etc.
+
+Non-natural/Human factors increasing global warming:
+--> Deforestation: through photosynthesis, trees absorb carbon dioxide and release oxygen, but due to increased demand for infrastructure and agriculture to meet the well-being, housing, career and consumption needs, a lot of forests are being cut down which is resulting in more carbon dioxide remaining in the atmosphere.
+--> Agriculture: not only does agriculture demand trees to be cut down in some places, but also releases nitrogen oxides into the atmosphere, which is also a greenhouse gas.
+--> Fossil fuels: the burning of fossil fuels like coal, gas and oil, release extremely large amounts of carbon dioxide into the air. Fossil fuels are burnt for reasons like transportation, energy, mining, industry manufacturing, etc.
+--> Landfill: dumping waste into landfill contrary to popular belief is actual extremely detrimental, as it firstly contaminates the soil, land and also releases methane through decomposition, which is known to be the most prolific greenhouse gas in capturing heat.
+--> Cattle rearing: due to the ever increasing need for meat and diary products to meet the demands of a rapidly growing global population. Grazing cattle has immensely increased and through the flatulence of grazing cows which accounts 37% of all methane produced. In addition the greenhouse gasses produced in making the genetically modified food for the cattle. (70kg - 120kg methane a year per cow)
+--> The ozone layer depletion will increase greatly due to a greenhouse gas called chlor-furo-carbon, which primarily emitted by refrigerators, mostly used in china
+
+Natural factors increasing global warming:
+--> Volcanoes: carbon dioxide is released during a volcanic eruption.
+--> Changes in the orbit: Milankovitch cycles cause the earth to have natural and cooling periods, due to the tilting variations of the Earth's obit around the sun.
+
+As can be seen, human actions clearly outweigh natural factors, rendering us the culprit to the implications we are facing and will face due to Climate Change, if no further action is taken to stop it.

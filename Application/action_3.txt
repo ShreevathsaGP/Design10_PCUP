@@ -1,0 +1,45 @@
+Recycling can broadly defined as the process of collecting waste materials and breaking hem down into building blocks that can be turned into new products. However because the building blocks of different types of wastes are different, they first need to be segregated.
+
+The place where recycling happens is called a a MRF or Material Recover Facility, and there are two main types of material recovery facilities, namely:
+
+Dual stream recycling plants:
+In these types of plants, the waste delivered to them is not mixed, but segregated to, mixed paper and everything else, so they lack the difficult process of segregating mixed paper from everything else, which has to be sone in single stream plants, nevertheless the rest of the process is identical to the single stream.
+
+Single stream recycling plants:
+Everything is put in the same bin for these plants, and thrown onto the same conveyer belt to be segregated and then processed. Anything can be recycled, but there are some materials like electronics and chemical waste which are too complex and have too many toxins to be processed, so if they are found in the bins of these recycling plants they are either sent to a specialised plant or disposed of.
+
+There are five main types of waste that need to be recycled for both the types of recycling plants, and they are segregated in this way:
+
+    The paper and the cardboard come first, and being pushed by air they go into rotary screen separators, wherein the heavier, distinguishably 3 dimensional (bottles)objects fall through the gaps in between the wheels of the rotary a conveyer belt below, the lighter paper and cardboard ride at a 45° incline into a conveyer belt above. This cardboard and paper is then sorted by human workers. who remove any plastic or metal remnants and then further segregate paper and cardboard into Newspaper/mixed paper and corrugated cardboard.
+    All the items that entered the lower conveyer belt, continues onto another sorting line, wherein a cross-belt magnet(high-power magnet) attracts all the iron containing metals like steel, but the aluminium, which in most cases it not magnetic continues on.
+    The materials remaining now are, aluminium, glass and plastic, which are carried into an air classifier, which contains a fan that pushes the lighter aluminium and plastic into a higher conveyer belt, whereas the heavier glass falls down to a lower belt. The glass is then put into a rolling drum which shatters the glass into pieces <5cm wide, made sure through screening, these glass are then segregated according to colours, clear, brown and green (this is a must as the colours are permanent)
+    The aluminium is then separated form the plastic, using Eddy Current Separators, which using electro magnetic induction, to make the electrons in the aluminium (conductor) to develop their own magnetic field, pushing away form the separator, to a conveyer belt about 8-10 cm farther (divided), whereas the plastic falls to the closest conveyer belt. And in this manner all the materials are segregated.
+
+Paper:
+Paper is essentially made from cellulose fibres of wood and water, so in order to recycle the paper, the paper is first compacted, baled, sent to a mill and put in how water, this hot water breaks all the paper down into pulp, which is the strands and cellulose fibre of the paper. This pulp is then pushed through screens that remove any residues of plastic, glue or otherwise, but the ink still stays intact. So, this is sent into the de-inker, which is a bath consisting of air bubbles and surfactants, that separate paper from ink, as the air bubbles carry the ink up to the surface, whereas the heavier pulp sinks down. This clean pulp, is then used to make new paper products.
+
+Steel:
+The collected steel form the cross-belt magnet is crushed and baled and sent into foundries wherein it is melted, allowing it to be used alongside with new steel, used to make cars, beams, cans etc.
+
+Glass:
+The different coloured glasses after being separated are broken into a extremely small pieces called and then melted, to be reused for making new class (of the same colour they were before, because the materials like nickel used to make the glass into brown for example cannot be removed.)
+
+Aluminium:
+The aluminium is shredded, washed, melted and poured into moulds, which are re-sold to manufacturers, who then remelt the aluminium which can be cut and shape into the products they desire like cans, and license plats. 
+
+Plastic:
+The plastic is the hardest to recycle, because there are 6 main types, and they all have a different molecular structure:
+1) Polyethylene, Terephthalate
+2) High-Density Polyethylene
+3) Polyvinyl chloride
+4) Low-Density Polyethylene
+5) Polypropylene
+6) Polystyrene
+7) Others
+
+Plastic are made of long carbon chains, and the hydrocarbons used most times are extracted from fossil fuels like crude oil, which being the monomers, are compiled to make large polymers.
+
+(1) is recycled by melting, which can then be reshaped
+(3) PVC, used in piping and shampoo, cannot be melted as it releases poisonous HCL, when done, so it is ground into a powder in specialised plants, and then mixing with additives, which can be reused
+
+The other plastics are either recycled or thrown away. However plastic is extremely expensive to recycle so most times ends up in landfills, but in trusted and high tech MRF's infra-red sensors are use to separate plastic into the 6 types and then recycled respectively.
